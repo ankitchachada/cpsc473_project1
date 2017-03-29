@@ -10,6 +10,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/pwdconfirmation.js"></script>
     <script src="scripts/main.js"></script>
 </head>
 
@@ -31,6 +32,9 @@
                     <li>
                         <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -43,17 +47,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Login to Your Account</h4>
+                    <h4 class="modal-title">Login to your account</h4>
                 </div>
                 <div class="modal-body">
                     <form id="login-form">
-                        <input type="text" name="user" class="form-control" placeholder="Username" id="username">
+                        <input type="text" name="user" class="form-control" placeholder="Username" id="login-username">
                         <br>
-                        <input type="text" name="pass" class="form-control" placeholder="Password" id="pwd">
+                        <input type="text" name="pass" class="form-control" placeholder="Password" id="login-password">
                     </form>
                     <br>
                     <div class="login-help">
-                        <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                        <a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a> -
+                        <a href="#" data-toggle="modal" data-target="#forgot-password-modal">Forgot your password?</a>
                     </div>
                     <!--
                         Add facebook sign in button here
@@ -68,13 +73,71 @@
     </div>
     <!-- Login Modal End -->
 
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="sign-up-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="sign-up-form">
+                        * <input type="text" class="form-control" placeholder="First name" id="sign-up-first-name" required>
+                        <br>
+                        * <input type="text" class="form-control" placeholder="Last name" id="sign-up-last-name" required>
+                        <br>
+                        * <input type="text" class="form-control" placeholder="Email" id="sign-up-email" required>
+                        <br>
+                        * <input type="text" class="form-control" placeholder="Username" id="sign-up-username" required>
+                        <br>
+                        * <input type="text" class="form-control" placeholder="Password" id="sign-up-password" required>
+                        <br>
+                        * <input type="text" class="form-control" placeholder="Confirm password" id="confirm-sign-up-password" required>
+                    </form>
+                    <br>
+                    * Required
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info" form="sign-up-form" value="Submit" onclick="validatePassword();">Sign Up</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign Up Modal End -->
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Forgot Password?</h4>
+                </div>
+                <div class="modal-body">
+                    Enter the email address associated with your account.
+                    <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" id="forgot-password-email">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info" value="Submit">Continue</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Forgot Password Modal End -->
+
+    <!-- Start of the rest of the body -->
     <div class="container-fluid">
         <h1>Test Topic Voting</h1><br>
     </div>
 
     <!--Panels are defined in each column-->
     <!--2 columns used to define topics and user from each other.-->
-
 
     <div class="row">
         <div class="col-sm-3">
