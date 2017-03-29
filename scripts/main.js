@@ -11,7 +11,7 @@
         parent.find('tbody').append('<tr><td><li><a href="' + url + '">' + className + '</a></li></td></tr>');
     }
 
-    function addTopic(topicText = '', username = '', votes = 0, voteStatus = 0, topicID = 0) {
+    function addTopic(topicText = '', username = 'Anonymous', votes = 0, voteStatus = 0, topicID = 0) {
         var topicPanel = $('#topicProto').clone();
         topicPanel.appendTo(TOPIC_PANEL_PARENT);
         topicPanel.attr('id', topicID);
@@ -90,6 +90,14 @@
         $('.navbar-brand').text(className);
     }
 
+    // Topic submit modal
+    $(document).on('click', '#createTopicModal .btn-primary', function() {
+        var topic = $('#newTopic').val();
+        if (topic == '') return;
+        $('#newTopic').val('');
+        console.log("Creating Topic: " + topic);
+        addTopic(topic);
+    });
 
     $(document).ready(function() {
 
