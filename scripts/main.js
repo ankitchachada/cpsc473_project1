@@ -7,8 +7,8 @@
 
     function addToSchedule(className, url = '#') {
         var parent = $('#schedule');
-        parent.find('.dropdown-menu').append('<li><a href="' + url + '">' + className + '</a></li>');
-        parent.find('tbody').append('<tr><td><li><a href="' + url + '">' + className + '</a></li></td></tr>');
+        //parent.find('.dropdown-menu').append('<li><a href="' + url + '">' + className + '</a></li>');
+        parent.find('tbody').append('<tr><td><li>' + className + '</li></td></tr>');
     }
 
     function addTopic(topicText = '', username = 'Anonymous', votes = 0, voteStatus = 0, topicID = 0) {
@@ -25,6 +25,7 @@
 
         topicPanel.find('.panel-title').text(topicText);
         topicPanel.find('.panel-body').html("<i>submitted by</i> " + username);
+
         topicPanel.find('.count').text(votes);
 
         topicPanel.find('button').click(function() {
@@ -57,6 +58,18 @@
         topicPanel.show();
     }
 
+    //Handler for deleting a topic
+    $(document).on('click', '#deleteTopic', function() {
+        var topicID=$('topicID').val();
+        removeTopic(topicID);
+    });
+
+    //Handler for Editing a topic
+    $(document).on('click', '#editTopic', function() {
+        var topicID=$('topicID').val();
+
+
+    });
 
     function removeTopic(topicID) {
         $(TOPIC_PANEL_PARENT).find('#' + topicID).remove();

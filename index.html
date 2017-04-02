@@ -16,29 +16,31 @@
 
 <body>
     <!-- Black nav bar at the top -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <div>
+        <nav id="blackNavBar" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <p class="navbar-text">topPick</p>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <br><br><br>
 
     <!-- Login Modal -->
@@ -126,13 +128,10 @@
     <!-- Forgot Password Modal End -->
 
     <!-- Start of the rest of the body -->
-    <div class="container-fluid">
-        <h1 class="pageTitle">top<b>PICK</b></h1>
-    </div>
+    <div class="container-fluid"></div>
 
     <!--Panels are defined in each column-->
     <!--2 columns used to define topics and user from each other.-->
-
     <div class="row">
         <div class="col-sm-3">
             <div class="panel panel-default">
@@ -146,19 +145,7 @@
                     <thead>
                         <tr>
                             <th>Class Schedule</th>
-                            <th>
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle btn-xs" type="button" data-toggle="dropdown">Select Course
-                                      <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <!--
-                                            classes added here in addToSchedule()
-                                            eg.  <li><a href="#">CPSC 473</a></li>
-                                        -->
-                                    </ul>
-                                </div>
-                            </th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -173,15 +160,10 @@
 
 
         <div class="col-sm-9">
-
             <nav class="navbar navbar-default">
                 <!--Start of nav bar-->
                 <div class="container-fluid">
-                    <!--
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="#">Course Name</a>
-                        </div>
-                    -->
+
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Top Voted</a></li>
                         <li><a href="#">Most Viewed</a></li>
@@ -206,6 +188,7 @@
                                         <label for="comment">Topic:</label>
                                         <textarea class="form-control" rows="1" id="newTopic"></textarea>
                                     </div>
+                                    <input type="hidden" class="form-control" rows="1" id="email" value="<%= current_user.email %>" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
@@ -225,6 +208,18 @@
                 <div class="panel-heading">
                     <h3 class="panel-title pull-left">Topic text</h3>
 
+
+                  <div class="btn-group">
+                    <button id="editTopic" type="button" class="trash btn btn-default btn-xs">
+                      <span class="glyphicon glyphicon-pencil" aria-hidden="true">
+                        <button id="deleteTopic" type="button" class="trash btn btn-default btn-xs">
+                          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>
+                      </span>
+                    </button>
+                  </div>
+
+
                     <!-- Button group style-->
                     <div class="btn-group-vertical pull-right">
                         <button type="button" class="upvote btn btn-default btn-sm">
@@ -236,10 +231,12 @@
                       </button>
                     </div>
                     <h3 class="count pull-right">4</h3>
-
                     <div class="clearfix"></div>
                 </div>
-                <div class="panel-body">Username</div>
+
+                <div class="panel-body clearfix">Username
+
+                </div>
             </div>
             <!-- End of Topic Panel prototype -->
 
