@@ -15,9 +15,9 @@
     padding-bottom: 10px;
 }
 
-#blackNavBar {
+/*#blackNavBar {
     margin-bottom: 5px;
-}
+}*/
 
 body {
     padding-right: 20px;
@@ -67,8 +67,6 @@ body {
     margin: auto;
 }
 
-
-
 .navbar-nav {
     font-weight: bold;
     font-size: 15px;
@@ -76,4 +74,23 @@ body {
 
 .table {
     font-size: 16px;
+}
+
+.wrap {
+    width: 100%;
+}
+
+.login-form{
+    margin: auto;
+    width: 50%;
+}
+
+.forgot-password-link{
+    float: right;
+    margin-top: 15px;
+}
+
+.forgot-password-form{
+    margin: auto;
+    width: 50%;
 }
