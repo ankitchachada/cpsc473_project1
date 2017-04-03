@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -114,3 +115,252 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>topPick</title><br><br>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/pwdconfirmation.js"></script>
+    <script src="scripts/main.js"></script>
+</head>
+
+<body>
+    <!-- Black nav bar at the top -->
+    <div>
+        <nav id="blackNavBar" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <p class="navbar-text">topPick</p>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br><br><br>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="login-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login to your account</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <input type="text" name="user" class="form-control" placeholder="Username" id="login-username">
+                        <br>
+                        <input type="text" name="pass" class="form-control" placeholder="Password" id="login-password">
+                    </form>
+                    <br>
+                    <div class="login-help">
+                        <a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a> -
+                        <a href="#" data-toggle="modal" data-target="#forgot-password-modal">Forgot your password?</a>
+                    </div>
+                    <!--
+                        Add facebook sign in button here
+                     -->
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info" form="login-form" value="Submit">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal End -->
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="sign-up-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="sign-up-form">
+                        * <input type="text" class="form-control" placeholder="First name" id="sign-up-first-name" required>
+                        <br> * <input type="text" class="form-control" placeholder="Last name" id="sign-up-last-name" required>
+                        <br> * <input type="text" class="form-control" placeholder="Email" id="sign-up-email" required>
+                        <br> * <input type="text" class="form-control" placeholder="Username" id="sign-up-username" required>
+                        <br> * <input type="text" class="form-control" placeholder="Password" id="sign-up-password" required>
+                        <br> * <input type="text" class="form-control" placeholder="Confirm password" id="confirm-sign-up-password" required>
+                    </form>
+                    <br> * Required
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info" form="sign-up-form" value="Submit" onclick="validatePassword();">Sign Up</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign Up Modal End -->
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Forgot Password?</h4>
+                </div>
+                <div class="modal-body">
+                    Enter the email address associated with your account.
+                    <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" id="forgot-password-email">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info" value="Submit">Continue</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Forgot Password Modal End -->
+
+    <!-- Start of the rest of the body -->
+    <div class="container-fluid"></div>
+
+    <!--Panels are defined in each column-->
+    <!--2 columns used to define topics and user from each other.-->
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="card">
+                    <img class="card-img-top" src="images/computerscience.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <table id="schedule" class="table">
+                    <thead>
+                        <tr>
+                            <th>Class Schedule</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--
+                            classes added here in addToSchedule()
+                            eg.  <tr><td>CPSC 473</td></tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="col-sm-9">
+            <nav class="navbar navbar-default">
+                <!--Start of nav bar-->
+                <div class="container-fluid">
+
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Top Voted</a></li>
+                        <li><a href="#">Most Viewed</a></li>
+                        <li><a href="#">Most Controversial</a></li>
+
+                    </ul>
+
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn btn-info btn-sm pull-right navbar-btn" data-toggle="modal" data-target="#createTopicModal">Create Topic</button>
+
+                    <!-- Modal -->
+                    <div id="createTopicModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Create Topic</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="comment">Topic:</label>
+                                        <textarea class="form-control" rows="1" id="newTopic"></textarea>
+                                    </div>
+                                    <input type="hidden" class="form-control" rows="1" id="email" value="<%= current_user.email %>" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End modal -->
+
+                </div>
+            </nav>
+            <!-- End of Nav bar-->
+
+            <!-- Topic Panel prototype -->
+            <div id="topicProto" class="panel panel-default" hidden>
+                <div class="panel-heading">
+                    <h3 class="panel-title pull-left">Topic text</h3>
+
+
+                    <div class="btn-group">
+                        <button id="editTopic" type="button" class="trash btn btn-default btn-xs">
+                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </button>
+                        <button id="deleteTopic" type="button" class="trash btn btn-default btn-xs">
+                      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                    </div>
+
+
+                    <!-- Button group style-->
+                    <div class="btn-group-vertical pull-right">
+                        <button type="button" class="upvote btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span> Vote
+                        </button>
+
+                        <button type="button" class="downvote btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Vote
+                      </button>
+                    </div>
+                    <h3 class="count pull-right">4</h3>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="panel-body clearfix">Username
+
+                </div>
+            </div>
+            <!-- End of Topic Panel prototype -->
+
+
+        </div>
+    </div>
+</body>
+
+</html>
+>>>>>>> origin/master

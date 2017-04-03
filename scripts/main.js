@@ -60,15 +60,18 @@
 
     //Handler for deleting a topic
     $(document).on('click', '#deleteTopic', function() {
-        var topicID=$('topicID').val();
+        var topicPanel = $(this).parents('.panel')
+        var topicID = topicPanel.data('topicID');
         removeTopic(topicID);
+        console.log('Deleted topic ' + topicID);
     });
 
     //Handler for Editing a topic
     $(document).on('click', '#editTopic', function() {
-        var topicID=$('topicID').val();
+        var topicPanel = $(this).parents('.panel')
+        var topicID = topicPanel.data('topicID');
 
-
+        console.log('Editing topic ' + topicID);
     });
 
     function removeTopic(topicID) {
