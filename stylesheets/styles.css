@@ -51,6 +51,7 @@ body {
     margin-top: 5px;
 }
 
+
 .card-text {
     font-size: 16px;
     border: 2px;
@@ -72,8 +73,13 @@ body {
     font-size: 15px;
 }
 
+th{
+  text-align: center;
+}
+
 .table {
     font-size: 16px;
+    text-align: center;
 }
 
 .wrap {
